@@ -7,8 +7,10 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
+@Component  /* 중요 */
 public class EmpDAO {
+    /* 톰캣 구동될 때 미리 생성된 SqlsessionTemplate이 자동으로 저장되도록 하자 */
+
     @Autowired
     private SqlSessionTemplate ss;
 

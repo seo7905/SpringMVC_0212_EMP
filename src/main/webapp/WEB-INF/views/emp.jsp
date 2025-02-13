@@ -85,7 +85,6 @@
     <h1>회원목록</h1>
     <hr/>
     <table>
-
         <thead>
         <th>사번</th>
         <th>이름</th>

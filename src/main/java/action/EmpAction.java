@@ -10,21 +10,20 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class EmpAction {
+    /* 원하는 DAO를 자동적으로 받도록 지정한다. */
     @Autowired
     private EmpDAO empDAO;
 
-    @RequestMapping("/emp")
+    @RequestMapping("/emp/list")
     public ModelAndView emp() {
-        ModelAndView mv = new ModelAndView();
-
+        ModelAndView mv = new ModelAndView("emp"); /* (emp) 입력하면 setViewName을 지정하지 않아도 된다. */ /* 파일의 경로를 입력 */
         EmpVO[] ar = empDAO.getEmp();
         mv.addObject("emp", ar);
 //        for (EmpVO emp : ar) {
 //            System.out.println(emp.getPosno());
 //        }
-        mv.setViewName("emp");
+//        mv.setViewName("emp");
         return mv;
-
     }
 
 }
